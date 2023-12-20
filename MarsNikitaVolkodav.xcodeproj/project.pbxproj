@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDF4D0B82B32264B005ED3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */; };
+		FDF4D0BA2B32264B005ED3A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */; };
+		FDF4D0BC2B32264B005ED3A3 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0BB2B32264B005ED3A3 /* PreloaderViewController.swift */; };
+		FDF4D0C22B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0C02B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld */; };
+		FDF4D0C42B32264C005ED3A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0C32B32264C005ED3A3 /* Assets.xcassets */; };
+		FDF4D0C72B32264C005ED3A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0C52B32264C005ED3A3 /* LaunchScreen.storyboard */; };
+		FDF4D0D32B32326F005ED3A3 /* Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0D22B32326E005ED3A3 /* Loader.json */; };
+		FDF4D0D62B323527005ED3A3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = FDF4D0D52B323527005ED3A3 /* Lottie */; };
+		FDF4D0DA2B324F61005ED3A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0D92B324F61005ED3A3 /* Main.storyboard */; };
+		FDF4D0DC2B3256B1005ED3A3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0DB2B3256B1005ED3A3 /* MainViewController.swift */; };
+		FDF4D0DE2B32F02B005ED3A3 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0DD2B32F02B005ED3A3 /* CustomNavigationView.swift */; };
+		FDF4D0E32B335BD2005ED3A3 /* CustomFilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0E22B335BD2005ED3A3 /* CustomFilterButton.swift */; };
+		FDF4D0E52B336396005ED3A3 /* testUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0E42B336396005ED3A3 /* testUI.xib */; };
+		FDF4D0FA2B3368EC005ED3A3 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0E82B3368EB005ED3A3 /* SF-Pro-Display-Thin.otf */; };
+		FDF4D1042B3368EC005ED3A3 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F22B3368EC005ED3A3 /* SF-Pro-Display-Regular.otf */; };
+		FDF4D1052B3368EC005ED3A3 /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F32B3368EC005ED3A3 /* SF-Pro-Display-Black.otf */; };
+		FDF4D1072B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F52B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf */; };
+		FDF4D1092B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F72B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf */; };
+		FDF4D10B2B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F92B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf */; };
+		FDF4D10F2B338F84005ED3A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D10E2B338F84005ED3A3 /* NetworkManager.swift */; };
+		FDF4D1112B338FA4005ED3A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1102B338FA3005ED3A3 /* NetworkError.swift */; };
+		FDF4D1132B338FC9005ED3A3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1122B338FC9005ED3A3 /* Model.swift */; };
+		FDF4D1152B338FFC005ED3A3 /* NASAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1142B338FFC005ED3A3 /* NASAModel.swift */; };
+		FDF4D1172B33915E005ED3A3 /* GPTFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1162B33915E005ED3A3 /* GPTFile.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDF4D0B42B32264B005ED3A3 /* MarsNikitaVolkodav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsNikitaVolkodav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FDF4D0BB2B32264B005ED3A3 /* PreloaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloaderViewController.swift; sourceTree = "<group>"; };
+		FDF4D0C12B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MarsNikitaVolkodav.xcdatamodel; sourceTree = "<group>"; };
+		FDF4D0C32B32264C005ED3A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDF4D0C62B32264C005ED3A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDF4D0C82B32264C005ED3A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDF4D0D22B32326E005ED3A3 /* Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Loader.json; sourceTree = "<group>"; };
+		FDF4D0D92B324F61005ED3A3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FDF4D0DB2B3256B1005ED3A3 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FDF4D0DD2B32F02B005ED3A3 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		FDF4D0E22B335BD2005ED3A3 /* CustomFilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFilterButton.swift; sourceTree = "<group>"; };
+		FDF4D0E42B336396005ED3A3 /* testUI.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = testUI.xib; sourceTree = "<group>"; };
+		FDF4D0E82B3368EB005ED3A3 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		FDF4D0F22B3368EC005ED3A3 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		FDF4D0F32B3368EC005ED3A3 /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
+		FDF4D0F52B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		FDF4D0F72B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		FDF4D0F92B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
+		FDF4D10E2B338F84005ED3A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		FDF4D1102B338FA3005ED3A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FDF4D1122B338FC9005ED3A3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		FDF4D1142B338FFC005ED3A3 /* NASAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAModel.swift; sourceTree = "<group>"; };
+		FDF4D1162B33915E005ED3A3 /* GPTFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTFile.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDF4D0B12B32264B005ED3A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF4D0D62B323527005ED3A3 /* Lottie in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDF4D0AB2B32264A005ED3A3 = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0B62B32264B005ED3A3 /* MarsNikitaVolkodav */,
+				FDF4D0B52B32264B005ED3A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDF4D0B52B32264B005ED3A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0B42B32264B005ED3A3 /* MarsNikitaVolkodav.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDF4D0B62B32264B005ED3A3 /* MarsNikitaVolkodav */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D10D2B338F65005ED3A3 /* Network */,
+				FDF4D0DF2B3348C5005ED3A3 /* Fonts */,
+				FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */,
+				FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */,
+				FDF4D0BB2B32264B005ED3A3 /* PreloaderViewController.swift */,
+				FDF4D0DB2B3256B1005ED3A3 /* MainViewController.swift */,
+				FDF4D0DD2B32F02B005ED3A3 /* CustomNavigationView.swift */,
+				FDF4D0E22B335BD2005ED3A3 /* CustomFilterButton.swift */,
+				FDF4D0E42B336396005ED3A3 /* testUI.xib */,
+				FDF4D0D92B324F61005ED3A3 /* Main.storyboard */,
+				FDF4D0C32B32264C005ED3A3 /* Assets.xcassets */,
+				FDF4D0D22B32326E005ED3A3 /* Loader.json */,
+				FDF4D0C52B32264C005ED3A3 /* LaunchScreen.storyboard */,
+				FDF4D0C82B32264C005ED3A3 /* Info.plist */,
+				FDF4D0C02B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld */,
+			);
+			path = MarsNikitaVolkodav;
+			sourceTree = "<group>";
+		};
+		FDF4D0DF2B3348C5005ED3A3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0F32B3368EC005ED3A3 /* SF-Pro-Display-Black.otf */,
+				FDF4D0F72B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf */,
+				FDF4D0F92B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf */,
+				FDF4D0F22B3368EC005ED3A3 /* SF-Pro-Display-Regular.otf */,
+				FDF4D0F52B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf */,
+				FDF4D0E82B3368EB005ED3A3 /* SF-Pro-Display-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FDF4D10D2B338F65005ED3A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D10E2B338F84005ED3A3 /* NetworkManager.swift */,
+				FDF4D1102B338FA3005ED3A3 /* NetworkError.swift */,
+				FDF4D1122B338FC9005ED3A3 /* Model.swift */,
+				FDF4D1142B338FFC005ED3A3 /* NASAModel.swift */,
+				FDF4D1162B33915E005ED3A3 /* GPTFile.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDF4D0B32B32264B005ED3A3 /* MarsNikitaVolkodav */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF4D0CB2B32264C005ED3A3 /* Build configuration list for PBXNativeTarget "MarsNikitaVolkodav" */;
+			buildPhases = (
+				FDF4D0B02B32264B005ED3A3 /* Sources */,
+				FDF4D0B12B32264B005ED3A3 /* Frameworks */,
+				FDF4D0B22B32264B005ED3A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarsNikitaVolkodav;
+			packageProductDependencies = (
+				FDF4D0D52B323527005ED3A3 /* Lottie */,
+			);
+			productName = MarsNikitaVolkodav;
+			productReference = FDF4D0B42B32264B005ED3A3 /* MarsNikitaVolkodav.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDF4D0AC2B32264A005ED3A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					FDF4D0B32B32264B005ED3A3 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FDF4D0AF2B32264A005ED3A3 /* Build configuration list for PBXProject "MarsNikitaVolkodav" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDF4D0AB2B32264A005ED3A3;
+			packageReferences = (
+				FDF4D0D42B323527005ED3A3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
+			productRefGroup = FDF4D0B52B32264B005ED3A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDF4D0B32B32264B005ED3A3 /* MarsNikitaVolkodav */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDF4D0B22B32264B005ED3A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF4D0C72B32264C005ED3A3 /* LaunchScreen.storyboard in Resources */,
+				FDF4D0C42B32264C005ED3A3 /* Assets.xcassets in Resources */,
+				FDF4D1072B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf in Resources */,
+				FDF4D0FA2B3368EC005ED3A3 /* SF-Pro-Display-Thin.otf in Resources */,
+				FDF4D10B2B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf in Resources */,
+				FDF4D0D32B32326F005ED3A3 /* Loader.json in Resources */,
+				FDF4D1092B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf in Resources */,
+				FDF4D1042B3368EC005ED3A3 /* SF-Pro-Display-Regular.otf in Resources */,
+				FDF4D0E52B336396005ED3A3 /* testUI.xib in Resources */,
+				FDF4D0DA2B324F61005ED3A3 /* Main.storyboard in Resources */,
+				FDF4D1052B3368EC005ED3A3 /* SF-Pro-Display-Black.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDF4D0B02B32264B005ED3A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF4D0C22B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld in Sources */,
+				FDF4D0BC2B32264B005ED3A3 /* PreloaderViewController.swift in Sources */,
+				FDF4D0B82B32264B005ED3A3 /* AppDelegate.swift in Sources */,
+				FDF4D0DE2B32F02B005ED3A3 /* CustomNavigationView.swift in Sources */,
+				FDF4D10F2B338F84005ED3A3 /* NetworkManager.swift in Sources */,
+				FDF4D1132B338FC9005ED3A3 /* Model.swift in Sources */,
+				FDF4D0BA2B32264B005ED3A3 /* SceneDelegate.swift in Sources */,
+				FDF4D1112B338FA4005ED3A3 /* NetworkError.swift in Sources */,
+				FDF4D1152B338FFC005ED3A3 /* NASAModel.swift in Sources */,
+				FDF4D0E32B335BD2005ED3A3 /* CustomFilterButton.swift in Sources */,
+				FDF4D0DC2B3256B1005ED3A3 /* MainViewController.swift in Sources */,
+				FDF4D1172B33915E005ED3A3 /* GPTFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FDF4D0C52B32264C005ED3A3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDF4D0C62B32264C005ED3A3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDF4D0C92B32264C005ED3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDF4D0CA2B32264C005ED3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDF4D0CC2B32264C005ED3A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XHF8YABJ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarsNikitaVolkodav/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ua.NikitaVolkodav.MarsNikitaVolkodav;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		FDF4D0CD2B32264C005ED3A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5XHF8YABJ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MarsNikitaVolkodav/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ua.NikitaVolkodav.MarsNikitaVolkodav;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDF4D0AF2B32264A005ED3A3 /* Build configuration list for PBXProject "MarsNikitaVolkodav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF4D0C92B32264C005ED3A3 /* Debug */,
+				FDF4D0CA2B32264C005ED3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF4D0CB2B32264C005ED3A3 /* Build configuration list for PBXNativeTarget "MarsNikitaVolkodav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF4D0CC2B32264C005ED3A3 /* Debug */,
+				FDF4D0CD2B32264C005ED3A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FDF4D0D42B323527005ED3A3 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FDF4D0D52B323527005ED3A3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FDF4D0D42B323527005ED3A3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FDF4D0C02B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FDF4D0C12B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodel */,
+			);
+			currentVersion = FDF4D0C12B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodel */;
+			path = MarsNikitaVolkodav.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FDF4D0AC2B32264A005ED3A3 /* Project object */;
+}

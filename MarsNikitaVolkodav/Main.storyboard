@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wlT-PH-dc0">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Preloader View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="PreloaderViewController" customModule="MarsNikitaVolkodav" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kG-ns-P6a" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="71.666666666666686" y="654" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="5rJ-GW-5v1"/>
+                                    <constraint firstAttribute="height" constant="50" id="rSd-je-5kq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="Loader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aE-zd-12w">
+                                <rect key="frame" x="135" y="364.66666666666669" width="123" height="123"/>
+                                <color key="backgroundColor" name="accentOne"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="GLh-zT-MxV"/>
+                                    <constraint firstAttribute="width" constant="123" id="J2Y-uc-9tg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="backgroundOne"/>
+                        <constraints>
+                            <constraint firstItem="7aE-zd-12w" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="10i-Bm-Olb"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0kG-ns-P6a" secondAttribute="bottom" constant="114" id="7eb-bq-IRl"/>
+                            <constraint firstItem="0kG-ns-P6a" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="RSD-89-fYi"/>
+                            <constraint firstItem="7aE-zd-12w" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="mxb-4C-KvB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="o1P-p8-Vs4"/>
+                    <connections>
+                        <outlet property="iconView" destination="7aE-zd-12w" id="daz-sI-2v3"/>
+                        <outlet property="loaderView" destination="0kG-ns-P6a" id="CBu-dU-wCS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="4"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BrU-qx-NGY">
+            <objects>
+                <navigationController id="wlT-PH-dc0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h6E-x1-1Le">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="42f-fZ-gEW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="51X-Dz-ijk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-860" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="accentOne">
+            <color red="0.92941176470588238" green="0.44705882352941179" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="backgroundOne">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
