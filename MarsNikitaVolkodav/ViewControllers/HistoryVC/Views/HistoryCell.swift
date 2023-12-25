@@ -10,9 +10,9 @@ final class HistoryCell: UICollectionViewCell {
     private let cameraLabel = InfoLabel(labelText: "Camera:")
     private let dateLabel = InfoLabel(labelText: "Date:")
     
-    let roverValueLabel = ValueLabel(labelText: "Curiosity")
-    let cameraValueLabel = ValueLabel(labelText: "Front Hazard Avoidance Camera")
-    let dateValueLabel = ValueLabel(labelText: "June 6, 2019")
+    var roverValueLabel = ValueLabel(labelText: "Curiosity")
+    var cameraValueLabel = ValueLabel(labelText: "Front Hazard Avoidance Camera")
+    var dateValueLabel = ValueLabel(labelText: "June 6, 2019")
     
     private let roverStackView = UIStackView()
     private let cameraStackView = UIStackView()

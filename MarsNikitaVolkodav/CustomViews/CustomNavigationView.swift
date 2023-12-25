@@ -14,6 +14,8 @@ final class CustomNavigationView: UIView {
     private var plusButtonAction: (() -> Void)?
     private var calendarButtonAction: (() -> Void)?
     
+    private let dateFormaterService = DateFormaterService()
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -38,6 +40,49 @@ final class CustomNavigationView: UIView {
         addSubview(cameraFilterButton)
         addSubview(plusButton)
         addSubview(calendarButton)
+    }
+    // MARK: - Open Action for Date Label
+    func setDateLabel(date: Date) {
+        let dateToString = dateFormaterService.formatDateToString(date)
+        dateLabel.text = dateToString
+    }
+    
+    func getDateLabelText() -> String {
+        return dateLabel.text ?? ""
+    }
+    // MARK: - Open Action for camera Filter Button
+    func getCameraButtonTitle() -> String {
+        
+        guard let buttonText = cameraFilterButton.titleLabel?.text else {
+             return ""
+         }
+        
+        switch buttonText {
+        case "All":
+            return "All"
+        case "FHAZ":
+            return "Front Hazard Avoidance Camera"
+        case "RHAZ":
+            return "Rear Hazard Avoidance Camera"
+        case "MAST":
+            return "Mast Camera"
+        case "CHEMCAM":
+            return "Chemistry and Camera Complex"
+        case "MAHLI":
+            return "Mars Hand Lens Imager"
+        case "MARDI":
+            return "Mars Descent Imager"
+        case "NAVCAM":
+            return "Navigation Camera"
+        case "PANCAM":
+            return "Panoramic Camera"
+        default:
+            return ""
+        }
+    }
+    // MARK: - Open Action for Camera
+    func setCameraButtonTitle(title: String) {
+        cameraFilterButton.setupTitle(title: title)
     }
     
     // MARK: - Open Action for Buttons

@@ -20,6 +20,19 @@ final class MainViewController: UIViewController {
         mainCollectionView.addSubview(historyButton)
     }
 }
+// MARK: - Delegates
+extension MainViewController: SelectedDateDelegate {
+    func selectedDate(_ date: Date) {
+        customNavigationBar.setDateLabel(date: date)
+    }
+}
+
+extension MainViewController: SelectedCameraDelegate {
+    func selectedCamera(_ camera: String) {
+        customNavigationBar.setCameraButtonTitle(title: camera)
+    }
+}
+
 // MARK: - UICollectionViewDataSource
 extension MainViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,6 +87,7 @@ private extension MainViewController {
             let cameraVC = CameraViewController()
             cameraVC.modalTransitionStyle = .crossDissolve
             cameraVC.modalPresentationStyle =  .overCurrentContext
+            cameraVC.selectedCameraDelegate = self
             self.navigationController?.present(cameraVC, animated: true)
         }
     }
@@ -81,7 +95,13 @@ private extension MainViewController {
     func addActionPlusButton() {
         customNavigationBar.setPlusButtonAction { [weak self] in
             guard let self = self else { return }
-            AlertConteiner.showAlertSaveFilters(self)
+            AlertConteiner.showAlertSaveFilters(self) { action in
+                if action.title == "Save" {
+                    let cameraButtonText = self.customNavigationBar.getCameraButtonTitle()
+                    let dateLabelText = self.customNavigationBar.getDateLabelText()
+                    HistoryService.shared.saveHistoryFilterData(rover: "Curiosity", camera: cameraButtonText, date: dateLabelText)
+                }
+            }
         }
     }
     
@@ -89,6 +109,7 @@ private extension MainViewController {
         customNavigationBar.setCalendarButtonAction { [weak self] in
             guard let self = self else { return }
             let dateVC = DateViewController()
+            dateVC.selectedDateDelegate = self
             dateVC.modalTransitionStyle = .flipHorizontal
             dateVC.modalPresentationStyle =  .overCurrentContext
             self.navigationController?.present(dateVC, animated: true)
@@ -100,8 +121,6 @@ private extension MainViewController {
         }
     }
 }
-
-
 // MARK: - ConfigurationUI
 private extension MainViewController {
     func setupConfiguration() {

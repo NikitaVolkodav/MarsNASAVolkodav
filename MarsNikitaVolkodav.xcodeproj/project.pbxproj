@@ -43,6 +43,13 @@
 		FDFDBAB72B398976005D4531 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAB62B398976005D4531 /* DoneButton.swift */; };
 		FDFDBAB92B398AB7005D4531 /* TitlePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAB82B398AB7005D4531 /* TitlePickerLabel.swift */; };
 		FDFDBABB2B398C86005D4531 /* NavigationTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBABA2B398C86005D4531 /* NavigationTitleLabel.swift */; };
+		FDFDBABE2B39B797005D4531 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBABD2B39B797005D4531 /* FilterModel.swift */; };
+		FDFDBAC02B39B8D1005D4531 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBABF2B39B8D1005D4531 /* HistoryService.swift */; };
+		FDFDBAC22B39B90F005D4531 /* KeyСontainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAC12B39B90F005D4531 /* KeyСontainer.swift */; };
+		FDFDBAC62B3A049A005D4531 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAC52B3A049A005D4531 /* Delegates.swift */; };
+		FDFDBAC82B3A0839005D4531 /* DateFormaterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAC72B3A0839005D4531 /* DateFormaterService.swift */; };
+		FDFDBACA2B3A0CEC005D4531 /* CameraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAC92B3A0CEC005D4531 /* CameraModel.swift */; };
+		FDFDBACC2B3A0D37005D4531 /* CameraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBACB2B3A0D37005D4531 /* CameraData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +90,13 @@
 		FDFDBAB62B398976005D4531 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
 		FDFDBAB82B398AB7005D4531 /* TitlePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePickerLabel.swift; sourceTree = "<group>"; };
 		FDFDBABA2B398C86005D4531 /* NavigationTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleLabel.swift; sourceTree = "<group>"; };
+		FDFDBABD2B39B797005D4531 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		FDFDBABF2B39B8D1005D4531 /* HistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
+		FDFDBAC12B39B90F005D4531 /* KeyСontainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyСontainer.swift"; sourceTree = "<group>"; };
+		FDFDBAC52B3A049A005D4531 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
+		FDFDBAC72B3A0839005D4531 /* DateFormaterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormaterService.swift; sourceTree = "<group>"; };
+		FDFDBAC92B3A0CEC005D4531 /* CameraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraModel.swift; sourceTree = "<group>"; };
+		FDFDBACB2B3A0D37005D4531 /* CameraData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +157,10 @@
 			isa = PBXGroup;
 			children = (
 				FD97204D2B38791F00068359 /* AlertConteiner.swift */,
+				FDFDBABF2B39B8D1005D4531 /* HistoryService.swift */,
+				FDFDBAC12B39B90F005D4531 /* KeyСontainer.swift */,
+				FDFDBAC52B3A049A005D4531 /* Delegates.swift */,
+				FDFDBAC72B3A0839005D4531 /* DateFormaterService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -183,6 +201,7 @@
 		FDF4D0B62B32264B005ED3A3 /* MarsNikitaVolkodav */ = {
 			isa = PBXGroup;
 			children = (
+				FDFDBABC2B39B758005D4531 /* Models */,
 				FD97204C2B38791400068359 /* Services */,
 				FDF4D11C2B3395A1005ED3A3 /* CustomViews */,
 				FDF4D11B2B33952B005ED3A3 /* LifecycleApp */,
@@ -292,6 +311,16 @@
 			path = HistoryVC;
 			sourceTree = "<group>";
 		};
+		FDFDBABC2B39B758005D4531 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDBABD2B39B797005D4531 /* FilterModel.swift */,
+				FDFDBAC92B3A0CEC005D4531 /* CameraModel.swift */,
+				FDFDBACB2B3A0D37005D4531 /* CameraData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -387,8 +416,14 @@
 				FDF4D0B82B32264B005ED3A3 /* AppDelegate.swift in Sources */,
 				FDFDBAB92B398AB7005D4531 /* TitlePickerLabel.swift in Sources */,
 				FD9720502B387E1600068359 /* MainCell.swift in Sources */,
+				FDFDBAC22B39B90F005D4531 /* KeyСontainer.swift in Sources */,
 				FD97203E2B35DE5E00068359 /* CameraViewController.swift in Sources */,
+				FDFDBAC82B3A0839005D4531 /* DateFormaterService.swift in Sources */,
+				FDFDBACC2B3A0D37005D4531 /* CameraData.swift in Sources */,
+				FDFDBACA2B3A0CEC005D4531 /* CameraModel.swift in Sources */,
+				FDFDBAC02B39B8D1005D4531 /* HistoryService.swift in Sources */,
 				FD97204B2B386EE800068359 /* ValueLabel.swift in Sources */,
+				FDFDBAC62B3A049A005D4531 /* Delegates.swift in Sources */,
 				FDF4D0DE2B32F02B005ED3A3 /* CustomNavigationView.swift in Sources */,
 				FD9720452B36076200068359 /* HistoryCell.swift in Sources */,
 				FD9720562B389A4300068359 /* PhotoContentView.swift in Sources */,
@@ -397,6 +432,7 @@
 				FDF4D1242B339F6E005ED3A3 /* HistoryNavigationView.swift in Sources */,
 				FDFDBAB72B398976005D4531 /* DoneButton.swift in Sources */,
 				FDF4D0DC2B3256B1005ED3A3 /* MainViewController.swift in Sources */,
+				FDFDBABE2B39B797005D4531 /* FilterModel.swift in Sources */,
 				FDFDBAB52B398889005D4531 /* CloseButton.swift in Sources */,
 				FD9720542B389A1B00068359 /* PhotoViewController.swift in Sources */,
 				FDF4D1212B339CE5005ED3A3 /* HistoryViewController.swift in Sources */,
