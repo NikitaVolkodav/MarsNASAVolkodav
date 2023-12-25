@@ -6,12 +6,10 @@ final class HistoryViewController: UIViewController {
     private let emptyImageView = UIImageView()
     
     private let historyTableView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
-    var yourDataArray = ["1"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "backgroundOne")
         
         view.addSubview(historyNavigationView)
         view.addSubview(emptyImageView)
@@ -31,7 +29,13 @@ final class HistoryViewController: UIViewController {
     }
     
     func updateImageViewVisibility() {
-        emptyImageView.isHidden = yourDataArray.isEmpty
+        if HistoryService.shared.filterRecordHistoryData.isEmpty {
+            historyTableView.isHidden = true
+            emptyImageView.isHidden = false
+        } else {
+            historyTableView.isHidden = false
+            emptyImageView.isHidden = true
+        }
      }
     
     private func setActionForBackButton() {
@@ -78,21 +82,49 @@ final class HistoryViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        HistoryService.shared.filterRecordHistoryData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCell.reuseIdentifier, for: indexPath) as? HistoryCell else { return UICollectionViewCell() }
+        let historyService = HistoryService.shared.filterRecordHistoryData[indexPath.row]
+        cell.roverValueLabel.text = historyService.rover
+        cell.cameraValueLabel.text = historyService.camera
+        cell.dateValueLabel.text = historyService.date
         return cell
     }
 }
 // MARK: - UICollectionViewDelegate
 extension HistoryViewController : UICollectionViewDelegate {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if indexPath.row == 0 {
+//            AlertConteiner.showAlertMenuFilter(self)
+//        }
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            AlertConteiner.showAlertMenuFilter(self)
+        
+        AlertConteiner.showAlertMenuFilter(self) { action in
+            switch action.title {
+            case "Use":
+                // Обработка "Use"
+                break
+            case "Delete":
+                HistoryService.shared.remove(at: indexPath.item)
+                collectionView.performBatchUpdates {
+                    collectionView.deleteItems(at: [indexPath])
+                    self.updateImageViewVisibility()
+                }
+            case "Cancel":
+                // Обработка "Cancel"
+                break
+            default:
+                break
+            }
         }
+
     }
+
 }
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HistoryViewController: UICollectionViewDelegateFlowLayout {

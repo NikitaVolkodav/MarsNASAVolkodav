@@ -8,15 +8,7 @@ final class CameraContentView: UIView {
     private let doneButton = DoneButton()
     private let pickerView = UIPickerView()
     
-    private let data = ["All",
-                        "FHAZ: Front Hazard Avoidance Camera",
-                        "RHAZ: Rear Hazard Avoidance Camera",
-                        "MAST: Mast Camera",
-                        "CHEMCAM: Chemistry and Camera Complex",
-                        "MAHLI: Mars Hand Lens Imager",
-                        "MARDI: Mars Descent Imager",
-                        "NAVCAM: Navigation Camera",
-                        "PANCAM: Panoramic Camera"]
+    private let cameraData = CameraData()
     
     private var closeButtonAction: (() -> Void)?
     private var doneButtonAction: (() -> Void)?
@@ -51,8 +43,8 @@ final class CameraContentView: UIView {
     }
     
     func getSelectedCamera() -> String {
-        let selectedValue = data[pickerView.selectedRow(inComponent: 0)]
-        return selectedValue
+        let selectedValue = cameraData.cameraData[pickerView.selectedRow(inComponent: 0)]
+        return selectedValue.abbreviation
     }
 }
 
@@ -154,10 +146,10 @@ extension CameraContentView: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        data.count
+        cameraData.cameraData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return data[row]
+        cameraData.cameraData[row].name
     }
 }

@@ -6,6 +6,8 @@ final class DateViewController: UIViewController {
     
     private let contentView = DateContentView()
     
+    weak var selectedDateDelegate: SelectedDateDelegate?
+    
     override func loadView() {
         view = contentView
     }
@@ -42,6 +44,7 @@ private extension DateViewController {
             self.dismiss(animated: true)
             self.removeDimmingView()
             let selectedDate = self.contentView.getSelectedDate()
+            selectedDateDelegate?.selectedDate(selectedDate)
         }
     }
 }

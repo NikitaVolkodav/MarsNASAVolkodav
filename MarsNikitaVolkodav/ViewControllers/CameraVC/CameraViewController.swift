@@ -3,6 +3,7 @@ import UIKit
 final class CameraViewController: UIViewController {
     
     private let contentView = CameraContentView()
+    weak var selectedCameraDelegate: SelectedCameraDelegate?
     
     override func loadView() {
         view = contentView
@@ -33,6 +34,7 @@ private extension CameraViewController {
             guard let self = self else { return }
             self.dismiss(animated: true)
             let selectedCamera = self.contentView.getSelectedCamera()
+            selectedCameraDelegate?.selectedCamera(selectedCamera)
         }
     }
 }
