@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD9720332B35899600068359 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9720322B35899600068359 /* DateViewController.swift */; };
+		FD9720392B35D08700068359 /* DateContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9720382B35D08700068359 /* DateContentView.swift */; };
+		FD97203E2B35DE5E00068359 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97203D2B35DE5E00068359 /* CameraViewController.swift */; };
+		FD9720402B35DE7400068359 /* CameraContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97203F2B35DE7400068359 /* CameraContentView.swift */; };
+		FD9720452B36076200068359 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9720442B36076200068359 /* HistoryCell.swift */; };
+		FD9720472B36097700068359 /* InfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9720462B36097700068359 /* InfoLabel.swift */; };
+		FD97204B2B386EE800068359 /* ValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97204A2B386EE800068359 /* ValueLabel.swift */; };
+		FD97204E2B38791F00068359 /* AlertConteiner.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97204D2B38791F00068359 /* AlertConteiner.swift */; };
+		FD9720502B387E1600068359 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD97204F2B387E1600068359 /* MainCell.swift */; };
+		FD9720542B389A1B00068359 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9720532B389A1B00068359 /* PhotoViewController.swift */; };
+		FD9720562B389A4300068359 /* PhotoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9720552B389A4300068359 /* PhotoContentView.swift */; };
 		FDF4D0B82B32264B005ED3A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */; };
 		FDF4D0BA2B32264B005ED3A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */; };
 		FDF4D0BC2B32264B005ED3A3 /* PreloaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D0BB2B32264B005ED3A3 /* PreloaderViewController.swift */; };
@@ -26,14 +37,26 @@
 		FDF4D1072B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F52B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf */; };
 		FDF4D1092B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F72B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf */; };
 		FDF4D10B2B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = FDF4D0F92B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf */; };
-		FDF4D10F2B338F84005ED3A3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D10E2B338F84005ED3A3 /* NetworkManager.swift */; };
-		FDF4D1112B338FA4005ED3A3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1102B338FA3005ED3A3 /* NetworkError.swift */; };
-		FDF4D1132B338FC9005ED3A3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1122B338FC9005ED3A3 /* Model.swift */; };
-		FDF4D1152B338FFC005ED3A3 /* NASAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1142B338FFC005ED3A3 /* NASAModel.swift */; };
-		FDF4D1172B33915E005ED3A3 /* GPTFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1162B33915E005ED3A3 /* GPTFile.swift */; };
+		FDF4D1212B339CE5005ED3A3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1202B339CE5005ED3A3 /* HistoryViewController.swift */; };
+		FDF4D1242B339F6E005ED3A3 /* HistoryNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF4D1232B339F6E005ED3A3 /* HistoryNavigationView.swift */; };
+		FDFDBAB52B398889005D4531 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAB42B398889005D4531 /* CloseButton.swift */; };
+		FDFDBAB72B398976005D4531 /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAB62B398976005D4531 /* DoneButton.swift */; };
+		FDFDBAB92B398AB7005D4531 /* TitlePickerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBAB82B398AB7005D4531 /* TitlePickerLabel.swift */; };
+		FDFDBABB2B398C86005D4531 /* NavigationTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDBABA2B398C86005D4531 /* NavigationTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD9720322B35899600068359 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		FD9720382B35D08700068359 /* DateContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateContentView.swift; sourceTree = "<group>"; };
+		FD97203D2B35DE5E00068359 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		FD97203F2B35DE7400068359 /* CameraContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraContentView.swift; sourceTree = "<group>"; };
+		FD9720442B36076200068359 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		FD9720462B36097700068359 /* InfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoLabel.swift; sourceTree = "<group>"; };
+		FD97204A2B386EE800068359 /* ValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueLabel.swift; sourceTree = "<group>"; };
+		FD97204D2B38791F00068359 /* AlertConteiner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertConteiner.swift; sourceTree = "<group>"; };
+		FD97204F2B387E1600068359 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		FD9720532B389A1B00068359 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		FD9720552B389A4300068359 /* PhotoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoContentView.swift; sourceTree = "<group>"; };
 		FDF4D0B42B32264B005ED3A3 /* MarsNikitaVolkodav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsNikitaVolkodav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,11 +77,12 @@
 		FDF4D0F52B3368EC005ED3A3 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		FDF4D0F72B3368EC005ED3A3 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		FDF4D0F92B3368EC005ED3A3 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
-		FDF4D10E2B338F84005ED3A3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		FDF4D1102B338FA3005ED3A3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		FDF4D1122B338FC9005ED3A3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		FDF4D1142B338FFC005ED3A3 /* NASAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAModel.swift; sourceTree = "<group>"; };
-		FDF4D1162B33915E005ED3A3 /* GPTFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTFile.swift; sourceTree = "<group>"; };
+		FDF4D1202B339CE5005ED3A3 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		FDF4D1232B339F6E005ED3A3 /* HistoryNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryNavigationView.swift; sourceTree = "<group>"; };
+		FDFDBAB42B398889005D4531 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		FDFDBAB62B398976005D4531 /* DoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneButton.swift; sourceTree = "<group>"; };
+		FDFDBAB82B398AB7005D4531 /* TitlePickerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePickerLabel.swift; sourceTree = "<group>"; };
+		FDFDBABA2B398C86005D4531 /* NavigationTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +97,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD9720342B35899900068359 /* DateVC */ = {
+			isa = PBXGroup;
+			children = (
+				FD9720352B3589AE00068359 /* Views */,
+				FD9720322B35899600068359 /* DateViewController.swift */,
+			);
+			path = DateVC;
+			sourceTree = "<group>";
+		};
+		FD9720352B3589AE00068359 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD9720382B35D08700068359 /* DateContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD97203A2B35DE3100068359 /* CameraVC */ = {
+			isa = PBXGroup;
+			children = (
+				FD97203C2B35DE4800068359 /* Views */,
+				FD97203D2B35DE5E00068359 /* CameraViewController.swift */,
+			);
+			path = CameraVC;
+			sourceTree = "<group>";
+		};
+		FD97203C2B35DE4800068359 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD97203F2B35DE7400068359 /* CameraContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD9720432B36055700068359 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD9720442B36076200068359 /* HistoryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD97204C2B38791400068359 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FD97204D2B38791F00068359 /* AlertConteiner.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD9720512B3899EE00068359 /* PhotoVC */ = {
+			isa = PBXGroup;
+			children = (
+				FD9720522B389A0000068359 /* Views */,
+				FD9720532B389A1B00068359 /* PhotoViewController.swift */,
+			);
+			path = PhotoVC;
+			sourceTree = "<group>";
+		};
+		FD9720522B389A0000068359 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD9720552B389A4300068359 /* PhotoContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FDF4D0AB2B32264A005ED3A3 = {
 			isa = PBXGroup;
 			children = (
@@ -92,21 +183,13 @@
 		FDF4D0B62B32264B005ED3A3 /* MarsNikitaVolkodav */ = {
 			isa = PBXGroup;
 			children = (
-				FDF4D10D2B338F65005ED3A3 /* Network */,
+				FD97204C2B38791400068359 /* Services */,
+				FDF4D11C2B3395A1005ED3A3 /* CustomViews */,
+				FDF4D11B2B33952B005ED3A3 /* LifecycleApp */,
+				FDF4D11A2B339497005ED3A3 /* SuportingFiles */,
+				FDF4D1192B339455005ED3A3 /* ViewControllers */,
 				FDF4D0DF2B3348C5005ED3A3 /* Fonts */,
-				FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */,
-				FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */,
-				FDF4D0BB2B32264B005ED3A3 /* PreloaderViewController.swift */,
-				FDF4D0DB2B3256B1005ED3A3 /* MainViewController.swift */,
-				FDF4D0DD2B32F02B005ED3A3 /* CustomNavigationView.swift */,
-				FDF4D0E22B335BD2005ED3A3 /* CustomFilterButton.swift */,
 				FDF4D0E42B336396005ED3A3 /* testUI.xib */,
-				FDF4D0D92B324F61005ED3A3 /* Main.storyboard */,
-				FDF4D0C32B32264C005ED3A3 /* Assets.xcassets */,
-				FDF4D0D22B32326E005ED3A3 /* Loader.json */,
-				FDF4D0C52B32264C005ED3A3 /* LaunchScreen.storyboard */,
-				FDF4D0C82B32264C005ED3A3 /* Info.plist */,
-				FDF4D0C02B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld */,
 			);
 			path = MarsNikitaVolkodav;
 			sourceTree = "<group>";
@@ -124,16 +207,89 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		FDF4D10D2B338F65005ED3A3 /* Network */ = {
+		FDF4D1192B339455005ED3A3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FDF4D10E2B338F84005ED3A3 /* NetworkManager.swift */,
-				FDF4D1102B338FA3005ED3A3 /* NetworkError.swift */,
-				FDF4D1122B338FC9005ED3A3 /* Model.swift */,
-				FDF4D1142B338FFC005ED3A3 /* NASAModel.swift */,
-				FDF4D1162B33915E005ED3A3 /* GPTFile.swift */,
+				FD9720512B3899EE00068359 /* PhotoVC */,
+				FD97203A2B35DE3100068359 /* CameraVC */,
+				FD9720342B35899900068359 /* DateVC */,
+				FDF4D1222B339CEC005ED3A3 /* HistoryVC */,
+				FDF4D11E2B3395C9005ED3A3 /* MainVC */,
+				FDF4D11D2B3395B7005ED3A3 /* PreloaderVC */,
 			);
-			path = Network;
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FDF4D11A2B339497005ED3A3 /* SuportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0C02B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld */,
+				FDF4D0C82B32264C005ED3A3 /* Info.plist */,
+				FDF4D0C52B32264C005ED3A3 /* LaunchScreen.storyboard */,
+				FDF4D0D22B32326E005ED3A3 /* Loader.json */,
+				FDF4D0C32B32264C005ED3A3 /* Assets.xcassets */,
+				FDF4D0D92B324F61005ED3A3 /* Main.storyboard */,
+			);
+			path = SuportingFiles;
+			sourceTree = "<group>";
+		};
+		FDF4D11B2B33952B005ED3A3 /* LifecycleApp */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0B92B32264B005ED3A3 /* SceneDelegate.swift */,
+				FDF4D0B72B32264B005ED3A3 /* AppDelegate.swift */,
+			);
+			path = LifecycleApp;
+			sourceTree = "<group>";
+		};
+		FDF4D11C2B3395A1005ED3A3 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0DD2B32F02B005ED3A3 /* CustomNavigationView.swift */,
+				FDF4D1232B339F6E005ED3A3 /* HistoryNavigationView.swift */,
+				FDFDBABA2B398C86005D4531 /* NavigationTitleLabel.swift */,
+				FD9720462B36097700068359 /* InfoLabel.swift */,
+				FD97204A2B386EE800068359 /* ValueLabel.swift */,
+				FDFDBAB82B398AB7005D4531 /* TitlePickerLabel.swift */,
+				FDF4D0E22B335BD2005ED3A3 /* CustomFilterButton.swift */,
+				FDFDBAB42B398889005D4531 /* CloseButton.swift */,
+				FDFDBAB62B398976005D4531 /* DoneButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		FDF4D11D2B3395B7005ED3A3 /* PreloaderVC */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D0BB2B32264B005ED3A3 /* PreloaderViewController.swift */,
+			);
+			path = PreloaderVC;
+			sourceTree = "<group>";
+		};
+		FDF4D11E2B3395C9005ED3A3 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				FDF4D11F2B3395D6005ED3A3 /* Views */,
+				FDF4D0DB2B3256B1005ED3A3 /* MainViewController.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
+		FDF4D11F2B3395D6005ED3A3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD97204F2B387E1600068359 /* MainCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FDF4D1222B339CEC005ED3A3 /* HistoryVC */ = {
+			isa = PBXGroup;
+			children = (
+				FD9720432B36055700068359 /* Views */,
+				FDF4D1202B339CE5005ED3A3 /* HistoryViewController.swift */,
+			);
+			path = HistoryVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,18 +377,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD9720472B36097700068359 /* InfoLabel.swift in Sources */,
+				FD9720402B35DE7400068359 /* CameraContentView.swift in Sources */,
+				FD9720392B35D08700068359 /* DateContentView.swift in Sources */,
+				FD9720332B35899600068359 /* DateViewController.swift in Sources */,
 				FDF4D0C22B32264B005ED3A3 /* MarsNikitaVolkodav.xcdatamodeld in Sources */,
 				FDF4D0BC2B32264B005ED3A3 /* PreloaderViewController.swift in Sources */,
+				FD97204E2B38791F00068359 /* AlertConteiner.swift in Sources */,
 				FDF4D0B82B32264B005ED3A3 /* AppDelegate.swift in Sources */,
+				FDFDBAB92B398AB7005D4531 /* TitlePickerLabel.swift in Sources */,
+				FD9720502B387E1600068359 /* MainCell.swift in Sources */,
+				FD97203E2B35DE5E00068359 /* CameraViewController.swift in Sources */,
+				FD97204B2B386EE800068359 /* ValueLabel.swift in Sources */,
 				FDF4D0DE2B32F02B005ED3A3 /* CustomNavigationView.swift in Sources */,
-				FDF4D10F2B338F84005ED3A3 /* NetworkManager.swift in Sources */,
-				FDF4D1132B338FC9005ED3A3 /* Model.swift in Sources */,
+				FD9720452B36076200068359 /* HistoryCell.swift in Sources */,
+				FD9720562B389A4300068359 /* PhotoContentView.swift in Sources */,
 				FDF4D0BA2B32264B005ED3A3 /* SceneDelegate.swift in Sources */,
-				FDF4D1112B338FA4005ED3A3 /* NetworkError.swift in Sources */,
-				FDF4D1152B338FFC005ED3A3 /* NASAModel.swift in Sources */,
 				FDF4D0E32B335BD2005ED3A3 /* CustomFilterButton.swift in Sources */,
+				FDF4D1242B339F6E005ED3A3 /* HistoryNavigationView.swift in Sources */,
+				FDFDBAB72B398976005D4531 /* DoneButton.swift in Sources */,
 				FDF4D0DC2B3256B1005ED3A3 /* MainViewController.swift in Sources */,
-				FDF4D1172B33915E005ED3A3 /* GPTFile.swift in Sources */,
+				FDFDBAB52B398889005D4531 /* CloseButton.swift in Sources */,
+				FD9720542B389A1B00068359 /* PhotoViewController.swift in Sources */,
+				FDF4D1212B339CE5005ED3A3 /* HistoryViewController.swift in Sources */,
+				FDFDBABB2B398C86005D4531 /* NavigationTitleLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,11 +541,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XHF8YABJ7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarsNikitaVolkodav/Info.plist;
+				INFOPLIST_FILE = MarsNikitaVolkodav/SuportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -406,11 +574,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5XHF8YABJ7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarsNikitaVolkodav/Info.plist;
+				INFOPLIST_FILE = MarsNikitaVolkodav/SuportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Main.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
