@@ -2,7 +2,7 @@ import UIKit
 import Lottie
 
 final class PreloaderViewController: UIViewController {
-            
+    
     @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var loaderView: LottieAnimationView!
     
@@ -10,7 +10,6 @@ final class PreloaderViewController: UIViewController {
         super.viewDidLoad()
         configurationIconView()
         configurationLoaderView()
-        
 #warning("поставить 5 секунд")
         Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
@@ -21,19 +20,6 @@ final class PreloaderViewController: UIViewController {
         self.navigationController?.pushViewController(mainViewController, animated: true)
         loaderView.stop()
     }
-    
-//    @objc func timerAction() {
-//        // Выполняется через 5 секунд
-//        let newViewController = MainViewController()
-//
-//        // Создаем новый UINavigationController с NewViewController в качестве rootViewController
-//        let newNavigationController = UINavigationController(rootViewController: newViewController)
-//
-//        // Заменяем текущий UINavigationController на новый
-//        UIApplication.shared.windows.first?.rootViewController = newNavigationController
-//        UIApplication.shared.windows.first?.makeKeyAndVisible()
-//    }
-    
 }
 
 private extension PreloaderViewController {
@@ -51,7 +37,7 @@ private extension PreloaderViewController {
     func configurationLoaderView() {
         loaderView.loopMode = .loop
         loaderView.contentMode = .scaleAspectFill
-        #warning("Почитать как работает loaderView")
+#warning("Почитать как работает loaderView")
         loaderView.play()
     }
 }

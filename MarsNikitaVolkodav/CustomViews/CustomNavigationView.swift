@@ -2,7 +2,7 @@ import UIKit
 
 final class CustomNavigationView: UIView {
     
-    private let titleCameraLabel = UILabel()
+    private let titleMarsCameraLabel = NavigationTitleLabel(labelText: "MARS.CAMERA")
     private let dateLabel = UILabel()
     private let cpuFilterButton = CustomFilterButton()
     private let cameraFilterButton = CustomFilterButton()
@@ -32,7 +32,7 @@ final class CustomNavigationView: UIView {
     }
     
     private func addSubviews() {
-        addSubview(titleCameraLabel)
+        addSubview(titleMarsCameraLabel)
         addSubview(dateLabel)
         addSubview(cpuFilterButton)
         addSubview(cameraFilterButton)
@@ -91,7 +91,6 @@ private extension CustomNavigationView {
 private extension CustomNavigationView {
     func setupConfiguration() {
         configurationSelfView()
-        configurationTitleCameraLabel()
         configurationDateLabel()
         configurationCpuFilterButton()
         configurationCameraFilterButton()
@@ -102,13 +101,6 @@ private extension CustomNavigationView {
     func configurationSelfView() {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(named: "accentOne")
-    }
-    
-    func configurationTitleCameraLabel() {
-        titleCameraLabel.font = UIFont(name: "SFProDisplay-Bold", size: 34)
-        titleCameraLabel.text = "MARS.CAMERA"
-        titleCameraLabel.backgroundColor = .clear
-        titleCameraLabel.textColor = UIColor(named: "layerOne")
     }
     
     func configurationDateLabel() {
@@ -146,7 +138,7 @@ private extension CustomNavigationView {
 // MARK: - UpdateConstraints
 private extension CustomNavigationView {
     func setupConstraints() {
-        updateTitleCameraLabelConstraints()
+        updateTitleMarsCameraLabelConstraints()
         updateDateLabelConstraints()
         updateCpuFilterButtonConstraints()
         updateCameraFilterButtonConstraints()
@@ -166,19 +158,18 @@ private extension CustomNavigationView {
         ])
     }
     
-    func updateTitleCameraLabelConstraints() {
-        titleCameraLabel.translatesAutoresizingMaskIntoConstraints = false
+    func updateTitleMarsCameraLabelConstraints() {
         NSLayoutConstraint.activate([
-            titleCameraLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
-            titleCameraLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 19),
-            titleCameraLabel.heightAnchor.constraint(equalToConstant: 42)
+            titleMarsCameraLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            titleMarsCameraLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 19),
+            titleMarsCameraLabel.heightAnchor.constraint(equalToConstant: 42)
         ])
     }
     
     func updateDateLabelConstraints() {
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: titleCameraLabel.bottomAnchor, constant: 2),
+            dateLabel.topAnchor.constraint(equalTo: titleMarsCameraLabel.bottomAnchor, constant: 2),
             dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 19),
             dateLabel.heightAnchor.constraint(equalToConstant: 22)
         ])
