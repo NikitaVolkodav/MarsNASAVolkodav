@@ -28,6 +28,10 @@ final class PhotoContentView: UIView {
     func setCloseButtonAction(_ action: (() -> Void)?) {
         closeButtonAction = action
     }
+    
+    func setPhotoImageView(image: UIImage) {
+        photoImageView.image = image
+    }
 }
 // MARK: - ConfigurationUI
 private extension PhotoContentView {
@@ -37,7 +41,6 @@ private extension PhotoContentView {
     }
     
     func configurationPhotoImageView() {
-        photoImageView.image = UIImage(named: "test-image")
         photoImageView.contentMode = .scaleAspectFill
         photoImageView.clipsToBounds = true
     }

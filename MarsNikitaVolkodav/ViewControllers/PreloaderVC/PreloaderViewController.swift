@@ -10,8 +10,7 @@ final class PreloaderViewController: UIViewController {
         super.viewDidLoad()
         configurationIconView()
         configurationLoaderView()
-#warning("поставить 5 секунд")
-        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
     
     @objc func timerAction() {
@@ -37,7 +36,6 @@ private extension PreloaderViewController {
     func configurationLoaderView() {
         loaderView.loopMode = .loop
         loaderView.contentMode = .scaleAspectFill
-#warning("Почитать как работает loaderView")
         loaderView.play()
     }
 }

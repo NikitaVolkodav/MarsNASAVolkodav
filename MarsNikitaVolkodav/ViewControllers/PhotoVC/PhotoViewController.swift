@@ -3,6 +3,7 @@ import UIKit
 final class PhotoViewController: UIViewController {
     
     private let contentView = PhotoContentView()
+    var selectedImage: UIImage?
     
     override func loadView() {
         view = contentView
@@ -11,6 +12,12 @@ final class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addActionCloseButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let selectedImage = selectedImage else { return }
+        contentView.setPhotoImageView(image: selectedImage)
     }
     
     private func addActionCloseButton() {

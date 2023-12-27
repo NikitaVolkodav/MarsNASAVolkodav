@@ -8,13 +8,13 @@ final class MainCell: UICollectionViewCell {
     private let cameraLabel = InfoLabel(labelText: "Camera:")
     private let dateLabel = InfoLabel(labelText: "Date:")
     
-    let roverValueLabel = ValueLabel(labelText: "Curiosity")
-    let cameraValueLabel = ValueLabel(labelText: "Chemistry and Camera Complex")
-    let dateValueLabel = ValueLabel(labelText: "June 6, 2019")
-    
     private let roverStackView = UIStackView()
     private let cameraStackView = UIStackView()
     private let dateStackView = UIStackView()
+    
+    let roverValueLabel = ValueLabel(labelText: "Curiosity")
+    let cameraValueLabel = ValueLabel()
+    let dateValueLabel = ValueLabel(labelText: "Date")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +26,10 @@ final class MainCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setMarsImage(image: UIImage) {
+        marsImage.image = image
     }
     
     private func addSubviews() {
@@ -55,7 +59,6 @@ final class MainCell: UICollectionViewCell {
     }
     
     private func setConfigurations() {
-        marsImage.image = UIImage(named: "test-image")
         marsImage.contentMode = .scaleAspectFill
         marsImage.layer.cornerRadius = 20
         marsImage.clipsToBounds = true
