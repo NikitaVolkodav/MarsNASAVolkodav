@@ -6,6 +6,12 @@ final class HistoryViewController: UIViewController {
     private let emptyImageView = UIImageView()
     
     private let historyTableView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private let dateFormaterService = DateFormaterService()
+    
+    private var filterModels: [Filters] = []
+    
+    weak var selectedHistoryCell: SelectedHistoryCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,7 @@ final class HistoryViewController: UIViewController {
         
         configurationHistoryTableView()
         updateHistoryTableViewConstraints()
+        filterModels = CoreDataManager.shared.fetchFilters()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +36,7 @@ final class HistoryViewController: UIViewController {
     }
     
     func updateImageViewVisibility() {
-        if HistoryService.shared.filterRecordHistoryData.isEmpty {
+        if CoreDataManager.shared.fetchFilters().isEmpty {
             historyTableView.isHidden = true
             emptyImageView.isHidden = false
         } else {
@@ -37,6 +44,13 @@ final class HistoryViewController: UIViewController {
             emptyImageView.isHidden = true
         }
      }
+    
+    private func deleteSelectedCell(at indexPath: IndexPath) {
+        let selectedFilterModel = filterModels[indexPath.item]
+        CoreDataManager.shared.deleteFilter(selectedFilterModel)
+        filterModels.remove(at: indexPath.item)
+        historyTableView.deleteItems(at: [indexPath])
+    }
     
     private func setActionForBackButton() {
         historyNavigationView.setBackButtonAction { [weak self] in
@@ -82,41 +96,36 @@ final class HistoryViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 extension HistoryViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        HistoryService.shared.filterRecordHistoryData.count
+        filterModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HistoryCell.reuseIdentifier, for: indexPath) as? HistoryCell else { return UICollectionViewCell() }
-        let historyService = HistoryService.shared.filterRecordHistoryData[indexPath.row]
-        cell.roverValueLabel.text = historyService.rover
-        cell.cameraValueLabel.text = historyService.camera
-        cell.dateValueLabel.text = historyService.date
+        cell.roverValueLabel.text = filterModels[indexPath.row].rover
+        cell.cameraValueLabel.text = filterModels[indexPath.row].camera
+        cell.dateValueLabel.text = dateFormaterService.formatDateToString(filterModels[indexPath.row].date ?? Date())
+        
         return cell
     }
 }
 // MARK: - UICollectionViewDelegate
 extension HistoryViewController : UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.row == 0 {
-//            AlertConteiner.showAlertMenuFilter(self)
-//        }
-//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         AlertConteiner.showAlertMenuFilter(self) { action in
             switch action.title {
             case "Use":
-                // Обработка "Use"
+                let filterCameraIndexPath = self.filterModels[indexPath.row].camera ?? ""
+                let filterDateIndexPath = self.filterModels[indexPath.row].date ?? Date()
+                self.selectedHistoryCell?.selectedHistoryCell(camera: filterCameraIndexPath , earthDate: filterDateIndexPath)
+                self.navigationController?.popViewController(animated: true)
                 break
             case "Delete":
-                HistoryService.shared.remove(at: indexPath.item)
-                collectionView.performBatchUpdates {
-                    collectionView.deleteItems(at: [indexPath])
-                    self.updateImageViewVisibility()
-                }
+                self.deleteSelectedCell(at: indexPath)
+                self.updateImageViewVisibility()
             case "Cancel":
-                // Обработка "Cancel"
+                
                 break
             default:
                 break

@@ -2,9 +2,18 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    private let customNavigationBar = CustomNavigationView()
+    private let mainNavigationBarView = MainNavigationBarView()
     private let historyButton = UIButton()
     private let mainCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    
+    private let networkManager: NetworkManagerProtocol = NetworkManager()
+    private let imageCacheService = ImageCacheService()
+    
+    private let dateFormaterService = DateFormaterService()
+    private let abbreviationServiceMarsCamera = AbbreviationServiceMarsCamera()
+    
+    private var nasaModel: NASAModel?
+    private var checkURL : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,8 +23,28 @@ final class MainViewController: UIViewController {
         setActionForButtons()
     }
     
+    private func fetchDataCamera(camera: String) {
+        networkManager.searchImagesCamera(camera: camera) { [weak self] model, _ in
+            guard let self = self, let model = model else { return }
+            self.nasaModel = model
+            DispatchQueue.main.async {
+                self.mainCollectionView.reloadData()
+            }
+        }
+    }
+    
+    private func fetchDataDate(date: String) {
+        networkManager.searchImagesEarthDate(earthDate: date) { [weak self] model, _ in
+            guard let self = self, let model = model else { return }
+            self.nasaModel = model
+            DispatchQueue.main.async {
+                self.mainCollectionView.reloadData()
+            }
+        }
+    }
+    
     private func addSubviews() {
-        view.addSubview(customNavigationBar)
+        view.addSubview(mainNavigationBarView)
         view.addSubview(mainCollectionView)
         mainCollectionView.addSubview(historyButton)
     }
@@ -23,34 +52,86 @@ final class MainViewController: UIViewController {
 // MARK: - Delegates
 extension MainViewController: SelectedDateDelegate {
     func selectedDate(_ date: Date) {
-        customNavigationBar.setDateLabel(date: date)
+        mainNavigationBarView.selectedDate = date
+        mainNavigationBarView.setDateLabel()
+        
+        let stringDate = dateFormaterService.formatDateToStringForNetwork(date)
+        fetchDataDate(date: stringDate)
+        
     }
 }
 
 extension MainViewController: SelectedCameraDelegate {
     func selectedCamera(_ camera: String) {
-        customNavigationBar.setCameraButtonTitle(title: camera)
+        mainNavigationBarView.setCameraButtonTitle(title: camera)
+        fetchDataCamera(camera: camera)
+    }
+}
+
+extension MainViewController: SelectedCpuDelegate {
+    func selectedCpu(_ cpu: String) {
+        mainNavigationBarView.setCpuButtonTitle(title: cpu)
+    }
+}
+
+extension MainViewController: SelectedHistoryCell {
+    func selectedHistoryCell(camera: String, earthDate: Date) {
+        let selectedCamera = abbreviationServiceMarsCamera.getAbbreviation(for: camera)
+        let selectedEarthDate = dateFormaterService.formatDateToStringForNetwork(earthDate)
+        
+        mainNavigationBarView.selectedDate = earthDate
+        mainNavigationBarView.setDateLabel()
+        mainNavigationBarView.setCameraButtonTitle(title: selectedCamera)
+        
+        networkManager.searchImages(withCamera: selectedCamera, andEarthDate: selectedEarthDate) { [weak self] model, _ in
+            guard let self = self, let model = model else { return }
+            self.nasaModel = model
+            DispatchQueue.main.async {
+                self.mainCollectionView.reloadData()
+            }
+        }
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension MainViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        nasaModel?.photos.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.reuseIdentifier, for: indexPath) as? MainCell else { return UICollectionViewCell() }
+        cell.cameraValueLabel.text = nasaModel?.photos[indexPath.row].camera.fullName
+        cell.dateValueLabel.text = dateFormaterService.formatStringDateToString(nasaModel?.photos[indexPath.row].earthDate ?? "")
+        
+        self.checkURL = nasaModel?.photos[indexPath.row].imgSrc
+        if let imageURLString = nasaModel?.photos[indexPath.row].imgSrc,
+           let imageURL = URL(string: imageURLString),
+           self.checkURL == imageURLString {
+            imageCacheService.getImage(from: imageURL) { image in
+                DispatchQueue.main.async {
+                    cell.setMarsImage(image: image ?? UIImage())
+                }
+            }
+        }
         return cell
     }
 }
 // MARK: - UICollectionViewDelegate
 extension MainViewController : UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let photoViewController = PhotoViewController()
-            photoViewController.navigationItem.hidesBackButton = true
-            navigationController?.pushViewController(photoViewController, animated: true)
+        
+        guard let nasaModelImage = nasaModel?.photos[indexPath.row].imgSrc,
+              let webformatURL = URL(string: nasaModelImage) else { return }
+        imageCacheService.getImage(from: webformatURL) { image in
+            guard let image = image else { return }
+            DispatchQueue.main.async { [self] in
+                let photoViewController = PhotoViewController()
+                photoViewController.navigationItem.hidesBackButton = true
+                photoViewController.selectedImage = image
+                self.navigationController?.pushViewController(photoViewController, animated: true)
+            }
         }
     }
 }
@@ -74,15 +155,14 @@ private extension MainViewController {
     }
     
     func addActionCpuButton() {
-        customNavigationBar.setCpuButtonAction { [weak self] in
-            //            guard let self = self else { return } тут правильно!
-            guard let _ = self else { return }
-            print("Cpu")
+        mainNavigationBarView.setCpuButtonAction { [weak self] in
+            guard let _ = self else { return}
+//            guard let self = self else { return }
         }
     }
     
     func addActionCameraButton() {
-        customNavigationBar.setCameraButtonAction { [weak self] in
+        mainNavigationBarView.setCameraButtonAction { [weak self] in
             guard let self = self else { return }
             let cameraVC = CameraViewController()
             cameraVC.modalTransitionStyle = .crossDissolve
@@ -93,20 +173,21 @@ private extension MainViewController {
     }
     
     func addActionPlusButton() {
-        customNavigationBar.setPlusButtonAction { [weak self] in
+        mainNavigationBarView.setPlusButtonAction { [weak self] in
             guard let self = self else { return }
             AlertConteiner.showAlertSaveFilters(self) { action in
                 if action.title == "Save" {
-                    let cameraButtonText = self.customNavigationBar.getCameraButtonTitle()
-                    let dateLabelText = self.customNavigationBar.getDateLabelText()
-                    HistoryService.shared.saveHistoryFilterData(rover: "Curiosity", camera: cameraButtonText, date: dateLabelText)
+                    let cameraButtonText = self.mainNavigationBarView.getCameraButtonTitle()
+                    let selectedDate = self.mainNavigationBarView.selectedDate ?? Date()
+                    
+                    CoreDataManager.shared.createFilter(rover: "Curiosity", camera: cameraButtonText, date: selectedDate)
                 }
             }
         }
     }
     
     func addActionCalendarButton() {
-        customNavigationBar.setCalendarButtonAction { [weak self] in
+        mainNavigationBarView.setCalendarButtonAction { [weak self] in
             guard let self = self else { return }
             let dateVC = DateViewController()
             dateVC.selectedDateDelegate = self
@@ -139,6 +220,7 @@ private extension MainViewController {
     @objc func actionHistoryButton() {
         let historyVC = HistoryViewController()
         historyVC.navigationItem.hidesBackButton = true
+        historyVC.selectedHistoryCell = self
         self.navigationController?.pushViewController(historyVC, animated: true)
     }
     

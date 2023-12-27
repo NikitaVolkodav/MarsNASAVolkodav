@@ -101,8 +101,8 @@ private extension CameraContentView {
     func updateBackgroundViewConstraints(){
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor ),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 6),
             backgroundView.heightAnchor.constraint(equalToConstant: 312)
         ])

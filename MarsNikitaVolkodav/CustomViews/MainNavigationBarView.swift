@@ -1,6 +1,6 @@
 import UIKit
 
-final class CustomNavigationView: UIView {
+final class MainNavigationBarView: UIView {
     
     private let titleMarsCameraLabel = NavigationTitleLabel(labelText: "MARS.CAMERA")
     private let dateLabel = UILabel()
@@ -15,6 +15,8 @@ final class CustomNavigationView: UIView {
     private var calendarButtonAction: (() -> Void)?
     
     private let dateFormaterService = DateFormaterService()
+    
+    var selectedDate: Date? = Date()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -42,8 +44,8 @@ final class CustomNavigationView: UIView {
         addSubview(calendarButton)
     }
     // MARK: - Open Action for Date Label
-    func setDateLabel(date: Date) {
-        let dateToString = dateFormaterService.formatDateToString(date)
+    func setDateLabel() {
+        let dateToString = dateFormaterService.formatDateToString(selectedDate ?? Date())
         dateLabel.text = dateToString
     }
     
@@ -51,6 +53,7 @@ final class CustomNavigationView: UIView {
         return dateLabel.text ?? ""
     }
     // MARK: - Open Action for camera Filter Button
+    
     func getCameraButtonTitle() -> String {
         
         guard let buttonText = cameraFilterButton.titleLabel?.text else {
@@ -80,9 +83,13 @@ final class CustomNavigationView: UIView {
             return ""
         }
     }
-    // MARK: - Open Action for Camera
+    // MARK: - Open Action for Camera CPU Buttons
     func setCameraButtonTitle(title: String) {
         cameraFilterButton.setupTitle(title: title)
+    }
+    
+    func setCpuButtonTitle(title: String) {
+        cpuFilterButton.setupTitle(title: title)
     }
     
     // MARK: - Open Action for Buttons
@@ -103,7 +110,7 @@ final class CustomNavigationView: UIView {
     }
 }
 // MARK: - SetupButtonTargets
-private extension CustomNavigationView {
+private extension MainNavigationBarView {
     func setupButtonTargets() {
         addTargetsForButtons()
     }
@@ -133,7 +140,7 @@ private extension CustomNavigationView {
     }
 }
 // MARK: - ConfigurationUI
-private extension CustomNavigationView {
+private extension MainNavigationBarView {
     func setupConfiguration() {
         configurationSelfView()
         configurationDateLabel()
@@ -150,19 +157,20 @@ private extension CustomNavigationView {
     
     func configurationDateLabel() {
         dateLabel.font = UIFont(name: "SFProDisplay-Bold", size: 17)
-        dateLabel.text = "June 6, 2019"
+        let dateToString = dateFormaterService.formatDateToString(selectedDate ?? Date())
+        dateLabel.text = dateToString
         dateLabel.backgroundColor = .clear
         dateLabel.textColor = UIColor(named: "layerOne")
     }
     
     func configurationCpuFilterButton() {
         cpuFilterButton.setupImage(named: "cpu")
-        cpuFilterButton.setupTitle(title: " All")
+        cpuFilterButton.setupTitle(title: "All")
     }
     
     func configurationCameraFilterButton() {
         cameraFilterButton.setupImage(named: "camera")
-        cameraFilterButton.setupTitle(title: " All")
+        cameraFilterButton.setupTitle(title: "MAST")
     }
     
     func configurationPlusButton() {
@@ -181,7 +189,7 @@ private extension CustomNavigationView {
 }
 
 // MARK: - UpdateConstraints
-private extension CustomNavigationView {
+private extension MainNavigationBarView {
     func setupConstraints() {
         updateTitleMarsCameraLabelConstraints()
         updateDateLabelConstraints()
